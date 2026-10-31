@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <meta name="description" content="Resume and mobile development portfolio of P Musaddique Ali, Flutter Developer in Chennai, India.">
+  <title>P Musaddique Ali — Flutter Developer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f6f2;
+      --surface: #fff;
+      --ink: #172824;
+      --muted: #64736d;
+      --line: #e2e8e2;
+      --green: #245c4b;
+      --green-deep: #173c32;
+      --lime: #d7f477;
+      --soft-green: #edf4e9;
+      --shadow: 0 18px 48px rgb(23 40 36 / 7%);
+      --radius: 18px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 82% 4%, rgb(215 244 119 / 16%), transparent 26rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #8cae39;
+      outline-offset: 4px;
+    }
+
+    .page-shell {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .topbar,
+    .brand,
+    .topbar-links,
+    .hero-actions,
+    .contact-row,
+    .section-heading,
+    .role-heading,
+    .project-heading,
+    .footer-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .topbar {
+      justify-content: space-between;
+      min-height: 48px;
+      margin-bottom: 30px;
+    }
+
+    .brand {
+      gap: 11px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: .03em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--green-deep);
+      color: var(--lime);
+      font-size: 13px;
+      letter-spacing: -.05em;
+    }
+
+    .topbar-links {
+      gap: 22px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .topbar-links a {
+      text-decoration: none;
+      transition: color .18s ease;
+    }
+
+    .topbar-links a:hover,
+    .text-link:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(30px, 6vw, 66px);
+      border-radius: 26px;
+      background: var(--green-deep);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      position: absolute;
+      top: -145px;
+      right: -100px;
+      width: 390px;
+      height: 390px;
+      border: 1px solid rgb(215 244 119 / 20%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgb(215 244 119 / 4%), 0 0 0 78px rgb(215 244 119 / 3%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .project-type,
+    .mini-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: var(--lime);
+    }
+
+    .hero .eyebrow::before {
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 12px;
+      font-size: clamp(38px, 7vw, 68px);
+      font-weight: 720;
+      letter-spacing: -.065em;
+      line-height: 1.04;
+    }
+
+    .hero-role {
+      margin-bottom: 22px;
+      color: var(--lime);
+      font-size: clamp(12px, 1.8vw, 15px);
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .hero-summary {
+      max-width: 690px;
+      margin-bottom: 26px;
+      color: rgb(255 255 255 / 79%);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .contact-row {
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-bottom: 27px;
+      color: rgb(255 255 255 / 76%);
+      font-size: 12px;
+    }
+
+    .contact-row a {
+      text-decoration: none;
+    }
+
+    .contact-row a:hover {
+      color: var(--lime);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .contact-item svg {
+      width: 14px;
+      height: 14px;
+      flex: none;
+      color: var(--lime);
+    }
+
+    .hero-actions {
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 16px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      background: transparent;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: background .18s ease, transform .18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--lime);
+      color: var(--green-deep);
+    }
+
+    .button-primary:hover {
+      background: #e4ff93;
+    }
+
+    .button-quiet {
+      border-color: rgb(255 255 255 / 25%);
+      color: #fff;
+    }
+
+    .button-quiet:hover {
+      background: rgb(255 255 255 / 8%);
+    }
+
+    .button svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin: 20px 0 34px;
+      padding: 20px 8px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgb(255 255 255 / 72%);
+    }
+
+    .stat {
+      padding: 0 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-value {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--green);
+      font-size: 24px;
+      font-weight: 780;
+      letter-spacing: -.05em;
+      line-height: 1.25;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.68fr) minmax(270px, .92fr);
+      align-items: start;
+      gap: 22px;
+    }
+
+    .main-column,
+    .side-column {
+      display: grid;
+      gap: 22px;
+    }
+
+    .card {
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 8px 26px rgb(23 40 36 / 3%);
+    }
+
+    .section-heading {
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--green);
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 21px;
+      font-weight: 750;
+      letter-spacing: -.04em;
+      line-height: 1.25;
+    }
+
+    .section-index {
+      color: #a4b0a7;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .08em;
+    }
+
+    .role {
+      position: relative;
+      padding-left: 21px;
+      border-left: 1px solid #d5e0d6;
+    }
+
+    .role::before {
+      position: absolute;
+      top: 5px;
+      left: -5px;
+      width: 9px;
+      height: 9px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: #6f9c50;
+      box-shadow: 0 0 0 1px #6f9c50;
+      content: "";
+    }
+
+    .role + .role {
+      margin-top: 27px;
+    }
+
+    .role-heading {
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 3px;
+    }
+
+    .role-title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 750;
+      letter-spacing: -.02em;
+      line-height: 1.4;
+    }
+
+    .role-period {
+      flex: none;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: var(--soft-green);
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 750;
+    }
+
+    .role-company {
+      margin-bottom: 11px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .role-copy {
+      margin: 0 0 11px;
+      color: #53615b;
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .detail-list li {
+      position: relative;
+      padding-left: 14px;
+      color: #53615b;
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .detail-list li::before {
+      position: absolute;
+      top: .68em;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #87a85b;
+      content: "";
+    }
+
+    .project-label {
+      margin: 21px 0 10px;
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .project {
+      min-width: 0;
+      padding: 14px;
+      border: 1px solid #e8eee8;
+      border-radius: 11px;
+      background: #fbfcf9;
+    }
+
+    .project-heading {
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .project h4 {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 750;
+      line-height: 1.45;
+    }
+
+    .project-type {
+      flex: none;
+      color: #718578;
+      font-size: 8px;
+      letter-spacing: .08em;
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .skill-group + .skill-group {
+      margin-top: 19px;
+      padding-top: 17px;
+      border-top: 1px solid #edf0ec;
+    }
+
+    .skill-heading {
+      margin: 0 0 10px;
+      color: #50615a;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border: 1px solid #e5ebe4;
+      border-radius: 6px;
+      background: #fafbf8;
+      color: #46564f;
+      font-size: 10px;
+      font-weight: 620;
+      line-height: 1.35;
+    }
+
+    .tag-accent {
+      border-color: #dce8ca;
+      background: #f2f7e9;
+      color: var(--green);
+    }
+
+    .education-entry + .education-entry {
+      margin-top: 18px;
+      padding-top: 17px;
+      border-top: 1px solid #edf0ec;
+    }
+
+    .education-entry h3 {
+      margin: 0 0 4px;
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.5;
+    }
+
+    .education-entry p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .cert-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .cert-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #53615b;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .cert-dot {
+      width: 7px;
+      height: 7px;
+      flex: none;
+      margin-top: 5px;
+      border-radius: 50%;
+      background: #9abb5d;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      padding: 0;
+      background: var(--green-deep);
+      color: white;
+    }
+
+    .portfolio-inner {
+      padding: 25px;
+    }
+
+    .portfolio-inner .section-kicker {
+      color: var(--lime);
+    }
+
+    .portfolio-inner .section-title {
+      margin-bottom: 11px;
+      color: #fff;
+      font-size: 19px;
+    }
+
+    .portfolio-inner > p {
+      margin-bottom: 16px;
+      color: rgb(255 255 255 / 72%);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .portfolio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .portfolio-tags span {
+      padding: 4px 7px;
+      border: 1px solid rgb(255 255 255 / 16%);
+      border-radius: 5px;
+      color: rgb(255 255 255 / 84%);
+      font-size: 9px;
+      line-height: 1.4;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--lime);
+      font-size: 11px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .text-link:hover {
+      color: #e7ffa2;
+    }
+
+    .text-link svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .snapshot {
+      display: grid;
+      gap: 13px;
+    }
+
+    .snapshot-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 11px;
+      border-bottom: 1px solid #edf0ec;
+    }
+
+    .snapshot-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .snapshot-key {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .snapshot-value {
+      max-width: 58%;
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    .footer-row {
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 24px;
+      padding: 18px 3px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .footer-row a {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      .content-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .side-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .portfolio-card {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-shell {
+        width: min(100% - 28px, 440px);
+        padding-top: 15px;
+        padding-bottom: 34px;
+      }
+
+      .topbar {
+        margin-bottom: 18px;
+      }
+
+      .topbar-links {
+        gap: 12px;
+        font-size: 10px;
+      }
+
+      .topbar-links a:nth-child(2) {
+        display: none;
+      }
+
+      .hero {
+        padding: 30px 24px;
+        border-radius: 20px;
+      }
+
+      .hero::after {
+        top: -200px;
+        right: -215px;
+      }
+
+      .hero-summary {
+        font-size: 13px;
+      }
+
+      .contact-row {
+        display: grid;
+        gap: 9px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 17px;
+        padding: 17px 5px;
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(3),
+      .stat:nth-child(4) {
+        padding-top: 13px;
+        border-top: 1px solid var(--line);
+      }
+
+      .stat {
+        padding-right: 12px;
+        padding-left: 15px;
+      }
+
+      .stat-value {
+        font-size: 21px;
+      }
+
+      .card {
+        padding: 21px;
+      }
+
+      .side-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .portfolio-card {
+        grid-column: auto;
+      }
+
+      .project-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .role-heading {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    @media print {
+      @page {
+        margin: 12mm;
+      }
+
+      :root {
+        --paper: #fff;
+      }
+
+      body {
+        background: #fff;
+        font-size: 10pt;
+      }
+
+      .page-shell {
+        width: 100%;
+        padding: 0;
+      }
+
+      .topbar,
+      .hero-actions,
+      .footer-row {
+        display: none;
+      }
+
+      .hero {
+        padding: 24px;
+        border-radius: 0;
+        background: #173c32 !important;
+        box-shadow: none;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .hero::after {
+        display: none;
+      }
+
+      .hero-summary {
+        margin-bottom: 12px;
+      }
+
+      .contact-row {
+        margin-bottom: 0;
+      }
+
+      .stats {
+        margin: 12px 0;
+        padding: 12px 5px;
+      }
+
+      .content-grid {
+        grid-template-columns: minmax(0, 1.65fr) minmax(235px, .9fr);
+        gap: 12px;
+      }
+
+      .main-column,
+      .side-column {
+        gap: 12px;
+      }
+
+      .card {
+        padding: 17px;
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .portfolio-card {
+        background: #173c32 !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="P Musaddique Ali, back to top">
+        <span class="brand-mark" aria-hidden="true">MA</span>
+        <span>PMUSADDIQUE ALI</span>
+      </a>
+      <nav class="topbar-links" aria-label="Page navigation">
+        <a href="#experience">Experience</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#education">Education</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="name">
+        <div class="hero-content">
+          <p class="eyebrow">Resume &amp; selected work</p>
+          <h1 id="name">P Musaddique Ali</h1>
+          <p class="hero-role">FLUTTER DEVELOPER &nbsp;·&nbsp; MOBILE APPLICATION DEVELOPER &nbsp;·&nbsp; SOFTWARE ENGINEER</p>
+          <p class="hero-summary">
+            Software engineer with 11+ years of IT experience, including 2 years dedicated to Flutter development.
+            I build production-ready Android and iOS apps with Flutter and Dart, combining thoughtful interfaces,
+            reliable state management, connected services, and a deep foundation in enterprise IT.
+          </p>
+          <div class="contact-row">
+            <span class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 10.2c0 5.2-8 11-8 11s-8-5.8-8-11a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg>
+              Chennai, Tamil Nadu, India
+            </span>
+            <a class="contact-item" href="tel:+919597780343">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7.2 3.8 3 3.1-1.8 2.4a14.6 14.6 0 0 0 6.3 6.3l2.4-1.8 3.1 3-.8 3a1.8 1.8 0 0 1-2 1.3C9.7 20 4 14.3 3 6.6a1.8 1.8 0 0 1 1.3-2l2.9-.8Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              +91 95977 80343
+            </a>
+            <a class="contact-item" href="mailto:pmusaddiqueali@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              pmusaddiqueali@gmail.com
+            </a>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:pmusaddiqueali@gmail.com">
+              Get in touch
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <button class="button button-quiet" type="button" onclick="window.print()">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2m-10-3h10v7H7v-7Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Print resume
+            </button>
+            <a class="button button-quiet" href="https://www.linkedin.com/in/musaddique-ali-p-b8a916203/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="button button-quiet" href="https://github.com/thetechleaf90-creator" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button button-quiet" href="https://www.youtube.com/@TheTechLeaf_786" target="_blank" rel="noopener noreferrer">YouTube</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Career highlights">
+        <div class="stat"><span class="stat-value">11+</span><span class="stat-label">Years in IT</span></div>
+        <div class="stat"><span class="stat-value">2</span><span class="stat-label">Years dedicated to Flutter</span></div>
+        <div class="stat"><span class="stat-value">4+</span><span class="stat-label">Mobile products &amp; projects</span></div>
+        <div class="stat"><span class="stat-value">2</span><span class="stat-label">Platforms · Android &amp; iOS</span></div>
+      </section>
+
+      <div class="content-grid">
+        <div class="main-column">
+          <section class="card" id="experience" aria-labelledby="experience-title">
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">Career history</span>
+                <h2 class="section-title" id="experience-title">Professional experience</h2>
+              </div>
+              <span class="section-index">01 / 02</span>
+            </div>
+
+            <article class="role">
+              <div class="role-heading">
+                <h3 class="role-title">Flutter Developer</h3>
+                <span class="role-period">June 2023 — Present</span>
+              </div>
+              <p class="role-company">Satvat Infosol Pvt. Ltd. &nbsp;·&nbsp; Chennai, India</p>
+              <p class="role-copy">
+                Architect and maintain high-performance Flutter applications for Android and iOS. Build responsive
+                product experiences with predictable state management using BLoC, GetX, and Provider.
+              </p>
+              <ul class="detail-list">
+                <li>Integrate REST APIs, WebSockets, Firebase Authentication, cloud storage, and push notifications.</li>
+                <li>Develop background location tracking and geo-fencing for field service and delivery workflows.</li>
+                <li>Manage app releases and deployment lifecycles for Google Play and the Apple App Store.</li>
+              </ul>
+
+              <p class="project-label">Selected mobile projects</p>
+              <div class="project-grid">
+                <article class="project">
+                  <div class="project-heading">
+                    <h4>Growzeri</h4>
+                    <span class="project-type">Enterprise</span>
+                  </div>
+                  <p>B2B, B2E, and delivery ecosystem: live orders, store visits, attendance, cart management, and location-aware routing.</p>
+                </article>
+                <article class="project">
+                  <div class="project-heading">
+                    <h4>Skilli Job Portal</h4>
+                    <span class="project-type">Employment</span>
+                  </div>
+                  <p>Job search, candidate profiles, and application management with responsive interfaces and REST service integration.</p>
+                </article>
+                <article class="project">
+                  <div class="project-heading">
+                    <h4>Sangam</h4>
+                    <span class="project-type">Consumer</span>
+                  </div>
+                  <p>Devotional and spiritual app with custom responsive screens, API integration, and intuitive content navigation.</p>
+                </article>
+                <article class="project">
+                  <div class="project-heading">
+                    <h4>Dhwani &amp; wellness apps</h4>
+                    <span class="project-type">Health &amp; audio</span>
+                  </div>
+                  <p>Audio playback and sound-healing experiences, alongside guided diet and wellness tracking workflows.</p>
+                </article>
+              </div>
+            </article>
+
+            <article class="role">
+              <div class="role-heading">
+                <h3 class="role-title">Technical Support Engineer</h3>
+                <span class="role-period">March 2015 — June 2023</span>
+              </div>
+              <p class="role-company">Satvat Infosol Pvt. Ltd. &nbsp;·&nbsp; Chennai, India</p>
+              <p class="role-copy">
+                Supported enterprise IT, Linux server administration, production application hosting, and system engineering.
+              </p>
+              <ul class="detail-list">
+                <li>Administered Ubuntu and CentOS; managed Apache and Nginx virtual hosts, reverse proxies, and performance.</li>
+                <li>Handled DNS, SSL/TLS certificates, SSH security, access permissions, deployments, backups, and log troubleshooting.</li>
+                <li>Managed Windows Server 2008–2016, IIS deployments, Active Directory, group policies, and PowerShell automation.</li>
+                <li>Maintained SonicWall and Palo Alto firewalls, network switches, VLANs, NAS backups, and production monitoring.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="card" id="expertise" aria-labelledby="expertise-title">
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">What I work with</span>
+                <h2 class="section-title" id="expertise-title">Technical expertise</h2>
+              </div>
+              <span class="section-index">02 / 04</span>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-heading">Flutter &amp; mobile development</h3>
+              <div class="tags">
+                <span class="tag tag-accent">Flutter</span><span class="tag tag-accent">Dart</span><span class="tag">Android &amp; iOS</span><span class="tag">BLoC</span><span class="tag">GetX</span><span class="tag">Provider</span><span class="tag">Responsive UI/UX</span><span class="tag">Performance tuning</span><span class="tag">Play Store / App Store</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-heading">Backend, APIs &amp; databases</h3>
+              <div class="tags">
+                <span class="tag">REST APIs</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">WebSockets</span><span class="tag">Firebase</span><span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">JSON</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-heading">Mobile features &amp; services</h3>
+              <div class="tags">
+                <span class="tag">Background geo-tracking</span><span class="tag">Location services</span><span class="tag">Geo-fencing</span><span class="tag">Stripe &amp; PayPal</span><span class="tag">Push notifications</span><span class="tag">Authentication</span><span class="tag">Real-time messaging</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-heading">Infrastructure &amp; tools</h3>
+              <div class="tags">
+                <span class="tag">Linux · Ubuntu / CentOS</span><span class="tag">Apache &amp; Nginx</span><span class="tag">IIS</span><span class="tag">SSL / DNS</span><span class="tag">Git / GitLab</span><span class="tag">Postman</span><span class="tag">Figma</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="side-column" aria-label="Portfolio and additional information">
+          <section class="card portfolio-card" id="portfolio" aria-labelledby="portfolio-title">
+            <div class="portfolio-inner">
+              <span class="section-kicker">Featured portfolio</span>
+              <h2 class="section-title" id="portfolio-title">Flutter Login Screen Design Collection</h2>
+              <p>A published Flutter UI repository exploring modern mobile components and expressive login experiences.</p>
+              <div class="portfolio-tags" aria-label="Repository highlights">
+                <span>Dark mode</span><span>Flip card</span><span>Gradient UI</span><span>Material You</span><span>Wave animation</span><span>Minimalist</span><span>QR login</span><span>Split screen</span><span>Stepper</span>
+              </div>
+              <a class="text-link" href="https://github.com/thetechleaf90-creator/Login-Screen-Design" target="_blank" rel="noopener noreferrer">
+                Explore the GitHub repository
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </section>
+
+          <section class="card" id="education" aria-labelledby="education-title">
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">Academic background</span>
+                <h2 class="section-title" id="education-title">Education</h2>
+              </div>
+              <span class="section-index">03 / 04</span>
+            </div>
+            <div class="education-entry">
+              <h3>Bachelor of Engineering</h3>
+              <p>Computer Science &amp; Engineering<br>Podhigai College of Engineering, Tamil Nadu</p>
+            </div>
+            <div class="education-entry">
+              <h3>HSC &amp; SSLC</h3>
+              <p>Mazhar Ul-Uloom Higher Secondary School, Tamil Nadu</p>
+            </div>
+          </section>
+
+          <section class="card" aria-labelledby="certifications-title">
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">Learning &amp; credentials</span>
+                <h2 class="section-title" id="certifications-title">Certifications</h2>
+              </div>
+              <span class="section-index">04 / 04</span>
+            </div>
+            <ul class="cert-list">
+              <li><span class="cert-dot" aria-hidden="true"></span><span>Flutter &amp; Dart Foundation Course — Udemy</span></li>
+              <li><span class="cert-dot" aria-hidden="true"></span><span>MCSE &amp; CCNA — SoftLogic Academy, Chennai</span></li>
+              <li><span class="cert-dot" aria-hidden="true"></span><span>A+ &amp; N+ Hardware / Networking — SoftLogic Academy</span></li>
+              <li><span class="cert-dot" aria-hidden="true"></span><span>SonicWall &amp; Palo Alto Firewall Admin — Udemy</span></li>
+            </ul>
+          </section>
+
+          <section class="card" aria-labelledby="snapshot-title">
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">At a glance</span>
+                <h2 class="section-title" id="snapshot-title">Career snapshot</h2>
+              </div>
+            </div>
+            <div class="snapshot">
+              <div class="snapshot-row"><span class="snapshot-key">Primary stack</span><span class="snapshot-value">Flutter · Dart · REST · Node.js</span></div>
+              <div class="snapshot-row"><span class="snapshot-key">State management</span><span class="snapshot-value">BLoC · GetX · Provider</span></div>
+              <div class="snapshot-row"><span class="snapshot-key">Target positions</span><span class="snapshot-value">Flutter / Mobile App Developer</span></div>
+              <div class="snapshot-row"><span class="snapshot-key">Preferred locations</span><span class="snapshot-value">Chennai · Coimbatore · Bangalore · Hyderabad</span></div>
+              <div class="snapshot-row"><span class="snapshot-key">Deployment</span><span class="snapshot-value">Google Play · Apple App Store</span></div>
+              <div class="snapshot-row"><span class="snapshot-key">Infrastructure</span><span class="snapshot-value">Linux · Web servers · Hosting</span></div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer-row">
+      <span>P Musaddique Ali &nbsp;·&nbsp; Flutter Developer &nbsp;·&nbsp; Chennai, India</span>
+      <a href="mailto:pmusaddiqueali@gmail.com">Let’s build something useful</a>
+    </footer>
+  </div>
+</body>
+</html>
